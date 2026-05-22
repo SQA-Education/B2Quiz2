@@ -97,7 +97,7 @@ body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea
       <div class="quiz-badge">Quiz 2 of 4</div>
       <span class="level-tag">B2 Upper-Intermediate</span>
       <h1>💼 Health & Lifestyle</h1>
-      <p style="color:#666;font-size:.9em">Test your knowledge from Class 8 • Term 1/2026</p>
+      <p style="color:#666;font-size:.9em">Test your knowledge from Class 8</p>
     </div>
     <div class="card start-card">
       <h2>Welcome! 👋</h2>
@@ -213,13 +213,13 @@ function submitToTeacher(){
   if(btn){btn.disabled=true;btn.textContent='⏳ Submitting...';}
   const formData=new FormData();
   if(window._formPayload){for(const[k,v]of Object.entries(window._formPayload)){formData.append(k,v);}}
-  fetch('https://docs.google.com/forms/d/e/1FAIpQLSd--80V_b4ovCyNW76LAYTbGy30gvafPtU39a3ijUWLO5mGng/formResponse',{method:'POST',mode:'no-cors',body:formData}).catch(function(){});
-  const status=document.getElementById('submitStatus');
-  if(status){status.innerHTML='✅ <strong>Results submitted successfully!</strong><br><span style="font-size:0.9em;color:#555">Your teacher has received your quiz results.</span>';status.style.display='block';}
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSfDXXLehbGcROb4WTDgby7ERQgo8rJVjl41_2ku-Zsue_uQgw/formResponse',{method:'POST',mode:'no-cors',body:formData}).catch(function(){});
+  const statusDiv=document.getElementById('submitStatus');
+  if(statusDiv){statusDiv.innerHTML='✅ <strong>Results submitted successfully!</strong><br><span style="font-size:0.9em;color:#555">Your teacher has received your quiz results.</span>';statusDiv.style.display='block';}
   if(btn){btn.style.display='none';}
 }
-function goToDashboard(){window.location.href='b2-quiz-dashboard.html';}
-function retryQuiz(){location.reload();}
+
+
 </script>
 </body>
 </html>
